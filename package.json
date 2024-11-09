@@ -1,0 +1,25 @@
+{
+  "name": "postmaster_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --env-file=.env server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "mongoose": "^8.7.0",
+    "nvm": "^0.0.4",
+    "openai": "^4.67.1",
+    "punycode": "^2.3.1",
+    "telegraf": "^4.16.3",
+    "userland": "^0.4.3"
+  }
+}

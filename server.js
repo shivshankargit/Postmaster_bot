@@ -5,8 +5,6 @@ import eventModel from './models/Event.js';
 import connectDb  from './config/db.js';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-
-
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
@@ -40,8 +38,11 @@ bot.start(async (ctx) => {
     );
 
     await ctx.reply(`
-        Hey! ${from.first_name}, Welcome. I will be writing highly engaging social media posts for you 🚀 Just keep feeding me with the events through out the day. Let's shine on social media ✨`
+        Hey! ${from.first_name}, Welcome. I will be writing highly engaging social media posts for you 🚀 
+        Just keep feeding me with the events through out the day. Let's shine on social media ✨`
     );
+
+
 
     } catch(error) {
         console.log(error);
@@ -138,15 +139,11 @@ bot.on(message('text'), async(ctx) => {
             `If you want to clear your previous history, just enter the command: /clear`
         );
 
-        
-
     } catch(error) {
         console.log(error);
         await ctx.reply("Facing difficulties, please try again later.");
     }
 });
-
-
 
 bot.launch();
 
